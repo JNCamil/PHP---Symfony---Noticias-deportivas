@@ -1,0 +1,20 @@
+{% extends 'universal.html.twig' %}
+
+
+
+{% block js %}
+
+<script type="text/javascript" src="{{ asset("static/js/noticias/individuales.js")}}"></script>
+{% endblock %}
+
+{% block title %}	Esta es la noticia {{idNoticia}}  {% endblock %}
+
+{% block contenido %}
+
+	<h1>Esta es la noticia {{idNoticia}} ! ✅</h1> 
+
+	<img src="{{ asset("static/img/prueba.jpg")}}" alt="Cargando imagen">
+
+	<br><a href="{{url("noticias")}}">Sección principal de noticias</a>
+
+{% endblock %}

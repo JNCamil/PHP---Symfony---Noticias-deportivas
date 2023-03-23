@@ -1,0 +1,26 @@
+{% extends 'universal.html.twig' %}
+
+{% block title %}
+	Esta es la sección de noticias 
+{% endblock %}
+{% block contenido %}
+
+	<h1>Esta es la sección de noticias ✅</h1>
+
+
+	<ul>
+		{% for noticia in noticias %}
+			{% if noticia.ID!=2 %}
+				<li>
+					<a href="{{url('noticiaSingle', { id:noticia.ID } )}}">{{ noticia.titulo }}
+					</a>
+				</li>
+				<!--Se accede con el nombre nominativo por si se ha cambiado la dirección o se ha movido o lo que sea
+				        El problema es el error por no darle un id para eso vamos a la función y establecemos el parámetro-->
+			{% else %}
+				{{ noticia.titulo }}
+			{% endif %}
+		{% endfor %}
+	</ul>
+
+{% endblock %}
